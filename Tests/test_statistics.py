@@ -7,8 +7,7 @@ import pprint
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        seed(5)
-        self.testData = randint(0, 10, 20)
+        self.testData = [813, 731, 560, 32, 361, 41, 461, 450, 317, 976, 6, 370, 99, 601, 45, 209, 994, 100, 49, 916]
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
