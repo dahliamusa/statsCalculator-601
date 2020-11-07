@@ -3,12 +3,12 @@ from numpy.random import seed
 from numpy.random import randint
 from Statistics.Statistics import Statistics
 import pprint
+import statistics
 
 
 class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
-        seed(5)
-        self.testData = randint(0, 10, 20)
+        self.testData = [813, 731, 560, 32, 361, 41, 461, 450, 317, 976, 6, 370, 99, 601, 45, 209, 994, 100, 49, 916]
         self.statistics = Statistics()
 
     def test_instantiate_calculator(self):
@@ -16,7 +16,7 @@ class MyTestCase(unittest.TestCase):
 
     def test_mean_calculator(self):
         mean = self.statistics.mean(self.testData)
-        self.assertEqual(mean, 4.25)
+        self.assertEqual(mean, statistics.mean(self.testData))
 
 
 if __name__ == '__main__':
