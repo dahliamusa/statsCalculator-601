@@ -14,8 +14,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean_calculator(self):
-        mean = self.statistics.mean(self.testData)
-        self.assertEqual(mean, statistics.mean(self.testData))
+        self.assertEqual(self.statistics.mean(self.testData), mean(self.testData))
 
 
 if __name__ == '__main__':
