@@ -3,6 +3,7 @@ from numpy.random import seed
 from numpy.random import randint
 from Statistics.Statistics import Statistics
 import pprint
+import statistics
 
 
 class MyTestCase(unittest.TestCase):
@@ -14,7 +15,8 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.statistics, Statistics)
 
     def test_mean_calculator(self):
-        self.assertEqual(self.statistics.mean(self.testData), mean(self.testData))
+        mean = self.statistics.mean(self.testData)
+        self.assertEqual(mean, statistics.mean(self.testData))
 
 
 if __name__ == '__main__':
