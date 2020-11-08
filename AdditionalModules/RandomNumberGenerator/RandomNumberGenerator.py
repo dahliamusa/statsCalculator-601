@@ -2,6 +2,7 @@ from Calculator.Calculator import Calculator
 from AdditionalModules.RandomNumberGenerator.NumberWithoutSeed import num_without_seed
 from AdditionalModules.RandomNumberGenerator.NumberWithSeed import num_with_seed
 from AdditionalModules.RandomNumberGenerator.RandomList import random_list
+from AdditionalModules.RandomNumberGenerator.RandomItem import random_item
 
 
 class RandomNumberGenerator(Calculator):
@@ -16,4 +17,8 @@ class RandomNumberGenerator(Calculator):
 
     def random_list(self, length, seed_value):
         self.result = random_list(length, seed_value)
+        return self.result
+
+    def random_item(self, data):
+        self.result = random_item(data)
         return self.result
