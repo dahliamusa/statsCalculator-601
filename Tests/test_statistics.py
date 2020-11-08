@@ -4,6 +4,7 @@ from numpy.random import randint
 from Statistics.Statistics import Statistics
 import pprint
 import statistics
+import numpy as np
 
 
 class MyTestCase(unittest.TestCase):
