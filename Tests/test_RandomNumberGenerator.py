@@ -7,7 +7,8 @@ class MyTestCase(unittest.TestCase):
     def setUp(self) -> None:
         self.low = 0
         self.high = 1000
-        self.seed_value = 5
+        self.seed_value = 100
+        self.length = 18
         self.rng = RandomNumberGenerator()
 
     def test_instantiate_calculator(self):
@@ -18,4 +19,8 @@ class MyTestCase(unittest.TestCase):
         self.assertNotEqual(number, randrange(self.low, self.high))
 
     def test_num_with_seed(self):
-        self.assertEqual(self.rng.num_with_seed(self.low, self.high, self.seed_value), self.rng.num_with_seed(self.low, self.high, self.seed_value))
+        self.assertEqual(self.rng.num_with_seed(self.low, self.high, self.seed_value),
+                         self.rng.num_with_seed(self.low, self.high, self.seed_value))
+
+    def test_random_list_seed(self):
+        self.assertEqual(self.rng.random_list(self.length, self.seed_value), self.rng.random_list(self.length, self.seed_value))
