@@ -3,9 +3,7 @@ import statistics
 from numpy.random import seed
 from numpy.random import randint
 from Statistics.Statistics import Statistics
-import pprint
-import statistics
-import numpy as np
+from AdditionalModules.HelperFunctions import stats_zscore
 
 
 class MyTestCase(unittest.TestCase):
@@ -20,6 +18,25 @@ class MyTestCase(unittest.TestCase):
         mean = self.statistics.mean(self.testData)
         self.assertEqual(mean, statistics.mean(self.testData))
 
+    def test_median_calculator(self):
+        median = self.statistics.median(self.testData)
+        self.assertEqual(median, statistics.median(self.testData))
+
+    def test_mode_calculator(self):
+        mode = self.statistics.mode(self.testData)
+        self.assertEqual(mode, statistics.mode(self.testData))
+
+    def test_variance_calculator(self):
+        variance = self.statistics.variance(self.testData)
+        self.assertEqual(variance, statistics.variance(self.testData))
+
+    def test_stdev_calculator(self):
+        stdev = self.statistics.stdev(self.testData)
+        self.assertEqual(stdev, statistics.stdev(self.testData))
+
+    def test_zscore_calculator(self):
+        zscore = self.statistics.zscore(self.testData)
+        self.assertEqual(zscore, stats_zscore(self.testData))
 
 
 if __name__ == '__main__':
