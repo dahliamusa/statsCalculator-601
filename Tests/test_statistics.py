@@ -1,4 +1,5 @@
 import unittest
+import statistics
 from numpy.random import seed
 from numpy.random import randint
 from Statistics.Statistics import Statistics
