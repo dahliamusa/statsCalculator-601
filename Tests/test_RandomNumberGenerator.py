@@ -26,3 +26,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_random_item(self):
         self.assertNotEqual(self.rng.random_item(self.testData), self.rng.random_item(self.testData))
+
+    def test_random_item_with_seed(self):
+        self.assertEqual(self.rng.random_item_with_seed(self.testData, self.seed_value), self.rng.random_item_with_seed(self.testData, self.seed_value))
