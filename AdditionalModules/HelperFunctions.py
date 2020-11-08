@@ -1,11 +1,13 @@
 import statistics
 
 
-def valid(data):
+def validate(data):
+    if len(data) == 0:
+        raise Exception("List is empty")
     for num in data:
         if type(num) == str:
-            return 0
-    return 1
+            raise Exception("Data is not numeric")
+
 
 def stats_zscore(data):
     mean_value = statistics.mean(data)
