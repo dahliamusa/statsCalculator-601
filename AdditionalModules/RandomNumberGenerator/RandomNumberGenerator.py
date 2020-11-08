@@ -4,6 +4,8 @@ from AdditionalModules.RandomNumberGenerator.NumberWithSeed import num_with_seed
 from AdditionalModules.RandomNumberGenerator.RandomList import random_list
 from AdditionalModules.RandomNumberGenerator.RandomItem import random_item
 from AdditionalModules.RandomNumberGenerator.RandomItemWithSeed import random_item_with_seed
+from AdditionalModules.RandomNumberGenerator.SelectItemsWithoutSeed import select_items
+from AdditionalModules.RandomNumberGenerator.SelectItemsWithSeed import select_items_with_seed
 
 
 class RandomNumberGenerator(Calculator):
@@ -26,4 +28,12 @@ class RandomNumberGenerator(Calculator):
 
     def random_item_with_seed(self, data, seed_value):
         self.result = random_item_with_seed(data, seed_value)
+        return self.result
+
+    def select_items(self, data, n):
+        self.result = select_items(data, n)
+        return self.result
+
+    def select_items_with_seed(self, data, n, seed_value):
+        self.result = select_items_with_seed(data, n, seed_value)
         return self.result
