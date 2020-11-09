@@ -1,9 +1,7 @@
 from random import randrange
-from random import seed
 
 
-def num_with_seed(low, high, seed_value):
-    seed(seed_value)
+def one(low, high):
     number = randrange(low, high)
     if randrange(0, 2) == 0:
         decimal = randrange(1, 99)

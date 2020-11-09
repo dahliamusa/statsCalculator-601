@@ -1,8 +1,7 @@
 from random import randrange
 from random import seed
-from time import time
 
 
-def random_item(data):
-    seed(time())
+def five(data, seed_value):
+    seed(seed_value)
     return data[randrange(0, len(data))]
