@@ -1,39 +1,46 @@
 from Calculator.Calculator import Calculator
-from AdditionalModules.RandomNumberGenerator.NumberWithoutSeed import num_without_seed
-from AdditionalModules.RandomNumberGenerator.NumberWithSeed import num_with_seed
-from AdditionalModules.RandomNumberGenerator.RandomList import random_list
-from AdditionalModules.RandomNumberGenerator.RandomItem import random_item
-from AdditionalModules.RandomNumberGenerator.RandomItemWithSeed import random_item_with_seed
-from AdditionalModules.RandomNumberGenerator.SelectItemsWithoutSeed import select_items
-from AdditionalModules.RandomNumberGenerator.SelectItemsWithSeed import select_items_with_seed
+from AdditionalModules.RandomNumberGenerator.One import one
+from AdditionalModules.RandomNumberGenerator.Two import two
+from AdditionalModules.RandomNumberGenerator.Three import three
+from AdditionalModules.RandomNumberGenerator.Four import four
+from AdditionalModules.RandomNumberGenerator.Five import five
+from AdditionalModules.RandomNumberGenerator.Six import six
+from AdditionalModules.RandomNumberGenerator.Seven import seven
 
 
 class RandomNumberGenerator(Calculator):
 
-    def num_without_seed(self, low, high):
-        self.result = num_without_seed(low, high)
+    # Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
+    def one(self, low, high):
+        self.result = one(low, high)
         return self.result
 
-    def num_with_seed(self, low, high, seed_value):
-        self.result = num_with_seed(low, high, seed_value)
+    # Generate a random number with a seed between a range of two numbers - Both Integer and Decimal
+    def two(self, low, high, seed_value):
+        self.result = two(low, high, seed_value)
         return self.result
 
-    def random_list(self, length, seed_value):
-        self.result = random_list(length, seed_value)
+    # Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
+    def three(self, length, seed_value):
+        self.result = three(length, seed_value)
         return self.result
 
-    def random_item(self, data):
-        self.result = random_item(data)
+    # Select a random item from a list
+    def four(self, data):
+        self.result = four(data)
         return self.result
 
-    def random_item_with_seed(self, data, seed_value):
-        self.result = random_item_with_seed(data, seed_value)
+    # Set a seed and randomly select the same value from a list
+    def five(self, data, seed_value):
+        self.result = five(data, seed_value)
         return self.result
 
-    def select_items(self, data, n):
-        self.result = select_items(data, n)
+    # Select N number of items from a list without a seed
+    def six(self, data, n):
+        self.result = six(data, n)
         return self.result
 
-    def select_items_with_seed(self, data, n, seed_value):
-        self.result = select_items_with_seed(data, n, seed_value)
+    # Select N number of items from a list with a seed
+    def seven(self, data, n, seed_value):
+        self.result = seven(data, n, seed_value)
         return self.result

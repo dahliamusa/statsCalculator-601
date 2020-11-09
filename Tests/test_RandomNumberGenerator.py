@@ -16,22 +16,30 @@ class MyTestCase(unittest.TestCase):
     def test_instantiate_calculator(self):
         self.assertIsInstance(self.rng, RandomNumberGenerator)
 
-    def test_num_without_seed(self):
-        self.assertNotEqual(self.rng.num_without_seed(self.low, self.high), randrange(self.low, self.high))
+    # Generate a random number without a seed between a range of two numbers - Both Integer and Decimal
+    def test_one(self):
+        self.assertNotEqual(self.rng.one(self.low, self.high), self.rng.one(self.low, self.high))
 
-    def test_num_with_seed(self):
-        self.assertEqual(self.rng.num_with_seed(self.low, self.high, self.seed_value), self.rng.num_with_seed(self.low, self.high, self.seed_value))
+    # Generate a random number with a seed between a range of two numbers - Both Integer and Decimal
+    def test_two(self):
+        self.assertEqual(self.rng.two(self.low, self.high, self.seed_value), self.rng.two(self.low, self.high, self.seed_value))
 
-    def test_random_list(self):
-        self.assertEqual(self.rng.random_list(self.length, self.seed_value), self.rng.random_list(self.length, self.seed_value))
+    # Generate a list of N random numbers with a seed and between a range of numbers - Both Integer and Decimal
+    def test_three(self):
+        self.assertEqual(self.rng.three(self.length, self.seed_value), self.rng.three(self.length, self.seed_value))
 
-    def test_random_item(self):
-        self.assertNotEqual(self.rng.random_item(self.testData), self.rng.random_item(self.testData))
+    # Select a random item from a list
+    def test_four(self):
+        self.assertNotEqual(self.rng.four(self.testData), self.rng.four(self.testData))
 
-    def test_select_items(self):
-        self.assertNotEqual(self.rng.select_items(self.testData, self.n), self.rng.select_items(self.testData, self.n))
+    # Set a seed and randomly select the same value from a list
+    def test_five(self):
+        self.assertEqual(self.rng.five(self.testData, self.seed_value), self.rng.five(self.testData, self.seed_value))
 
-    def test_select_items_with_seed(self):
-        res = self.rng.select_items_with_seed(self.testData, self.n, self.seed_value)
-        print(res)
-        self.assertEqual(res, self.rng.select_items_with_seed(self.testData, self.n, self.seed_value))
+    # Select N number of items from a list without a seed
+    def test_six(self):
+        self.assertNotEqual(self.rng.six(self.testData, self.n), self.rng.six(self.testData, self.n))
+
+    # Select N number of items from a list with a seed
+    def test_seven(self):
+        self.assertEqual(self.rng.seven(self.testData, self.n, self.seed_value), self.rng.seven(self.testData, self.n, self.seed_value))
